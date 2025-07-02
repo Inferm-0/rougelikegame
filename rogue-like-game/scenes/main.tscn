@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://deh4vbxt4331m"]
+[gd_scene load_steps=9 format=4 uid="uid://deh4vbxt4331m"]
 
 [ext_resource type="Texture2D" uid="uid://8stdclkdyxob" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://c2c5vfx3fu342" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://dq8ib6ug8vl36" path="res://scenes/player.tscn" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://diljrqaf5jqhl" path="res://scripts/player.gd" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://cmuc4d638mgjo" path="res://scenes/lawnmower_basic.tscn" id="5_tbgi4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_0wfyh")
@@ -160,8 +161,10 @@ tile_map_data = PackedByteArray("AAD//wEAAAABAAUAAAAAAAEAAAABAAUAAAABAAEAAAABAAU
 tile_set = SubResource("TileSet_h2yge")
 
 [node name="player" parent="." instance=ExtResource("3_sugp2")]
-position = Vector2(0, 1)
 script = ExtResource("4_jyhfs")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(-2, -59)
+
+[node name="lawnmower_basic" parent="." instance=ExtResource("5_tbgi4")]
+position = Vector2(-241, 4)
