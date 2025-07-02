@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://dq8ib6ug8vl36"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u8vuu"]
+load_path = "res://.godot/imported/Adobe Express - file (1).png-1de28966748d97e2aae3f08ae1a6e055.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
+atlas = SubResource("CompressedTexture2D_u8vuu")
+region = Rect2(0, 0, 729, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
+atlas = SubResource("CompressedTexture2D_u8vuu")
+region = Rect2(729, 0, 729, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqtel"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onrkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3pqv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="player" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, -75)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_hqtel")
+autoplay = "default"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(2, -81)
+scale = Vector2(0.1, 0.1)
+build_mode = 1
+polygon = PackedVector2Array(65, 435, 12, 568, -20, 565, -143, 559, -170, 475, -190, 420, -335, -225, 200, -215)
